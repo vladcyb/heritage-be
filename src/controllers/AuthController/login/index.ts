@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 import { UserModel } from '../../../models/UserModel'
 import { User } from '../../../models/mongo/User'
 import { errorResponse, resultResponse } from '../../../shared/responses'
-import { authConstants } from './constants'
+import { authConstants } from '../authConstants'
 import { HandleServerError } from '../../../shared/helpers/HandleServerError'
 
 export const login = async (req: Request<any, any, UserModel>, res: Response) => {
