@@ -5,10 +5,11 @@ import dotenv from 'dotenv'
 import session from 'express-session'
 import cors from 'cors'
 import { routes } from './routes'
+import { ObjectId } from 'mongodb'
 
 declare module 'express-session' {
   interface Session {
-    _id: string
+    _id: ObjectId
   }
 }
 
