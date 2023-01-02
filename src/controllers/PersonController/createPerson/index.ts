@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb'
 import { Request, Response } from 'express'
 import { matchedData } from 'express-validator'
 import { PersonModel } from '../../../models/PersonModel'
@@ -12,7 +13,7 @@ type CheckType = {
   found?: boolean,
 }
 
-const checkExistence = async (_id: string): Promise<CheckType> => {
+const checkExistence = async (_id: ObjectId): Promise<CheckType> => {
   try {
     const found = await Person.findOne({ _id })
     if (found) {
@@ -40,33 +41,28 @@ export const createPerson = async (req: Request<any, any, PersonModel>, res: Res
     })
     const person = new Person(data)
 
-    const {
-      nearest: {
-        mother,
-        father,
-      },
-    } = person
+    const { nearest } = person
 
-    if (mother) {
-      const result = await checkExistence(mother)
+    if (nearest?.mother) {
+      const result = await checkExistence(nearest.mother)
       if (!result.ok) {
         res.status(500).json(errorResponse(SOMETHING_WENT_WRONG_ERROR))
         return
       }
       if (!result.found) {
-        res.status(400).json(errorResponse(`A person with id=${mother} not found.`))
+        res.status(400).json(errorResponse(`A person with id=${nearest.mother} not found.`))
         return
       }
     }
 
-    if (father) {
-      const result = await checkExistence(father)
+    if (nearest?.father) {
+      const result = await checkExistence(nearest.father)
       if (!result.ok) {
         res.status(500).json(errorResponse(SOMETHING_WENT_WRONG_ERROR))
         return
       }
       if (!result.found) {
-        res.status(400).json(errorResponse(`A person with id=${father} not found.`))
+        res.status(400).json(errorResponse(`A person with id=${nearest.father} not found.`))
         return
       }
     }

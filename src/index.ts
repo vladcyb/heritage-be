@@ -4,8 +4,8 @@ import MongoStore from 'connect-mongo'
 import dotenv from 'dotenv'
 import session from 'express-session'
 import cors from 'cors'
-import { routes } from './routes'
 import { ObjectId } from 'mongodb'
+import { routes } from './routes'
 
 declare module 'express-session' {
   interface Session {
@@ -14,6 +14,7 @@ declare module 'express-session' {
 }
 
 dotenv.config()
+mongoose.set('strictQuery', false)
 
 const {
   PORT = 5000,
