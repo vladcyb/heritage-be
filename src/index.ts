@@ -17,17 +17,16 @@ dotenv.config()
 const {
   PORT = 5000,
   MONGO_URI,
-  CO0KIE_SECRET,
+  COOKIE_SECRET,
   NODE_ENV = 'production',
 } = process.env
 
 const app = express()
 
-
 async function start() {
   try {
     await mongoose.connect(MONGO_URI || '', {
-      dbName: 'heritage-be',
+      dbName: 'heritage',
     })
 
     if (NODE_ENV === 'development') {
@@ -40,13 +39,13 @@ async function start() {
     app.use(session({
       resave: true,
       saveUninitialized: false,
-      secret: CO0KIE_SECRET || '',
+      secret: COOKIE_SECRET || '',
       cookie: {
         secure: NODE_ENV === 'production',
         maxAge: 3600000,
       },
       store: MongoStore.create({
-        dbName: 'heritage-be',
+        dbName: 'heritage',
         collectionName: 'sessions',
         mongoUrl: MONGO_URI,
       }),
