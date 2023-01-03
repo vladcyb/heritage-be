@@ -7,7 +7,8 @@
     "start": "node dist/index.js",
     "dev": "nodemon",
     "build": "tsc",
-    "lint": "eslint --config .eslintrc.js src/**/*.{ts,tsx} && tsc --noEmit"
+    "lint": "eslint --config .eslintrc.js src/**/*.ts && tsc --noEmit",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,9 @@
     ],
     "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
     "ext": "ts, js"
+  },
+  "lint-staged": {
+    "src/*.ts": "npm run lint"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -46,6 +50,8 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.2.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "nodemon": "^2.0.15",
     "tsconfig-paths": "^4.1.2"
   }
