@@ -1,10 +1,9 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
-import { UserModel } from '../../../models/UserModel'
-import { User } from '../../../models/mongo/User'
-import { errorResponse, resultResponse } from '../../../shared/responses'
-import { HandleServerError } from '../../../shared/helpers/HandleServerError'
-import { authConstants } from '../authConstants'
+import { User, UserModel } from '#models'
+import { errorResponse, resultResponse } from '#shared/responses'
+import { authConstants } from '#controllers/AuthController/authConstants'
+import { HandleServerError } from '#shared/helpers/HandleServerError'
 
 export const register = async (req: Request<any, any, UserModel>, res: Response) => {
   try {

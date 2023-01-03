@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import { HandleServerError } from '../../../shared/helpers/HandleServerError'
-import { Person } from '../../../models/mongo/Person'
-import { errorResponse, resultResponse } from '../../../shared/responses'
+import { HandleServerError } from '#shared/helpers/HandleServerError'
+import { Person } from '#models'
+import { errorResponse, resultResponse } from '#shared/responses'
 import { UpdatePersonRequestType } from './types'
 
 

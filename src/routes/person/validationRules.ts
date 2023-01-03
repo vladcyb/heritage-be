@@ -1,8 +1,8 @@
 import { check, param } from 'express-validator'
-import { MUST_BE_MONGO_ID, MUST_BE_STRING } from '../../shared/constants/errors/validation'
-import { allowedSortKeys } from '../../shared/constants'
-import { SexEnum } from '../../enums/SexEnum'
-import { isISO8601DateOnly } from '../../shared/helpers/isISO8601DateOnly'
+import { MUST_BE_MONGO_ID, MUST_BE_STRING } from '#shared/constants/errors/validation'
+import { allowedSortKeys } from '#shared/constants'
+import { SexEnum } from '#enums/SexEnum'
+import { isISO8601DateOnly } from '#shared/helpers/isISO8601DateOnly'
 
 
 export const createPersonRules = [

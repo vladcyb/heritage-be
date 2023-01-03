@@ -1,6 +1,6 @@
 import { Response } from 'express'
-import { errorResponse } from '../../responses'
-import { SOMETHING_WENT_WRONG_ERROR } from '../../constants/errors/messages'
+import { errorResponse } from '#shared/responses'
+import { SOMETHING_WENT_WRONG_ERROR } from '#shared/constants/errors/messages'
 
 export const HandleServerError = (e: unknown, res: Response) => {
   console.log(e)

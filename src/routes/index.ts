@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { loginRoutes } from './login'
 import { personRoutes } from './person'
-import { authMiddleware } from '../middleware/authMiddleware'
+import { authMiddleware } from '#middleware/authMiddleware'
 import { refreshRoutes } from './refresh'
 import { registerRoutes } from './register'
 
