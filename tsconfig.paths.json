@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "#app/*": ["*"],
+      "#models/*": ["models/*"],
+      "#models": ["models"],
+      "#controllers/*": ["controllers/*"],
+      "#routes/*": ["routes/*"],
+      "#enums/*": ["enums/*"],
+      "#shared/*": ["shared/*"],
+      "#middleware/*": ["middleware/*"],
+    },
+  }
+}
