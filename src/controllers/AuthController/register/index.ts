@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
+
 import { User, UserModel } from '#models'
 import { errorResponse, resultResponse } from '#shared/responses'
 import { authConstants } from '#controllers/AuthController/authConstants'

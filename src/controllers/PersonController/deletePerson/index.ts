@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+
 import { Person } from '#models'
 import { HandleServerError } from '#shared/helpers/HandleServerError'
 import { resultResponse } from '#shared/responses'

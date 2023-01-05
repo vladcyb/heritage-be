@@ -8,6 +8,7 @@
     "dev": "nodemon",
     "build": "tsc",
     "lint": "eslint --config .eslintrc.js src/**/*.ts && tsc --noEmit",
+    "fix-lint": "eslint --config .eslintrc.js src/**/*.ts --fix",
     "prepare": "husky install"
   },
   "author": "",
@@ -26,7 +27,7 @@
     "ext": "ts, js"
   },
   "lint-staged": {
-    "src/*.ts": "npm run lint"
+    "src/*.ts": ["eslint --config .eslintrc.js", "bash -c tsc --noEmit"]
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -50,9 +51,13 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.2.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "nodemon": "^2.0.15",
-    "tsconfig-paths": "^4.1.2"
+    "tsconfig-paths": "^4.1.2",
+    "typescript": ">=3.3.1 <4.6.0"
   }
 }

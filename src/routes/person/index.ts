@@ -1,7 +1,9 @@
 import { Router } from 'express'
-import { createPersonRules, deletePersonRules, getPersonRules, updatePersonRules } from './validationRules'
+
 import { PersonController } from '#controllers/PersonController'
 import { ValidationController } from '#controllers/ValidationController'
+
+import { createPersonRules, deletePersonRules, getPersonRules, updatePersonRules } from './validationRules'
 
 export const personRoutes = Router()
 

@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
+import { ObjectId } from 'mongodb'
+
 import { Person } from '#models'
 import { errorResponse, resultArray, resultResponse } from '#shared/responses'
 import { HandleServerError } from '#shared/helpers/HandleServerError'
-import { ObjectId } from 'mongodb'
 
 export const getPerson = async (req: Request, res: Response) => {
   try {

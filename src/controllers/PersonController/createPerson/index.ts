@@ -1,6 +1,7 @@
 import { ObjectId } from 'mongodb'
 import { Request, Response } from 'express'
 import { matchedData } from 'express-validator'
+
 import { Person, PersonModel } from '#models'
 import { errorResponse, resultResponse } from '#shared/responses'
 import { SOMETHING_WENT_WRONG_ERROR } from '#shared/constants/errors/messages'

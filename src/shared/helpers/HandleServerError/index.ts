@@ -1,4 +1,5 @@
 import { Response } from 'express'
+
 import { errorResponse } from '#shared/responses'
 import { SOMETHING_WENT_WRONG_ERROR } from '#shared/constants/errors/messages'
 

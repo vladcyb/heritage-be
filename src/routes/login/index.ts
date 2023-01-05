@@ -1,7 +1,9 @@
 import { Router } from 'express'
+
+import { AuthController } from '#controllers/AuthController'
+
 import { validate } from './validate'
 import { validationRules } from './validationRules'
-import { AuthController } from '#controllers/AuthController'
 
 export const loginRoutes = Router()
 
