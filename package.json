@@ -27,7 +27,7 @@
     "ext": "ts, js"
   },
   "lint-staged": {
-    "src/*.ts": [
+    "*.{ts,js}": [
       "eslint --config .eslintrc.js",
       "bash -c tsc --noEmit"
     ]
