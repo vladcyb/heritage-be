@@ -33,4 +33,5 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   externals: [webpackNodeExternals()],
+  watch: true,
 }

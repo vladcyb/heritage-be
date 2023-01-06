@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
+    "wp": "webpack --mode development",
     "dev": "nodemon",
     "build": "webpack --mode production",
     "lint": "eslint --config .eslintrc.js src/**/*.ts && tsc --noEmit",
@@ -23,7 +24,7 @@
     "watch": [
       "src"
     ],
-    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
+    "exec": "node ./dist/index",
     "ext": "ts, js"
   },
   "lint-staged": {
@@ -60,7 +61,6 @@
     "lint-staged": "^13.1.0",
     "nodemon": "^2.0.15",
     "ts-loader": "^9.4.2",
-    "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.2",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": ">=3.3.1 <4.6.0",
