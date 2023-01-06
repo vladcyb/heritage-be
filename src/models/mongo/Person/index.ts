@@ -1,5 +1,6 @@
 import { model, Schema } from 'mongoose'
-import { SexEnum } from '../../../enums/SexEnum'
+
+import { SexEnum } from '#enums/SexEnum'
 
 
 export const personSchema = new Schema({

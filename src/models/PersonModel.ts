@@ -1,4 +1,4 @@
-import { SexEnum } from '../enums/SexEnum'
+import { SexEnum } from '#enums/SexEnum'
 
 export interface PersonModel {
   surname: string,

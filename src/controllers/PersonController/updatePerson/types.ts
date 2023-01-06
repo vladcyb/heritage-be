@@ -1,3 +1,3 @@
-import { PersonModel } from '../../../models/PersonModel'
+import { PersonModel } from '#models'
 
 export type UpdatePersonRequestType = Partial<PersonModel>

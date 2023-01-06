@@ -1,7 +1,8 @@
 import { Request, Response } from 'express'
-import { Person } from '../../../models/mongo/Person'
-import { HandleServerError } from '../../../shared/helpers/HandleServerError'
-import { resultResponse } from '../../../shared/responses'
+
+import { Person } from '#models'
+import { HandleServerError } from '#shared/helpers/HandleServerError'
+import { resultResponse } from '#shared/responses'
 
 
 export const deletePerson = async (req: Request, res: Response) => {
