@@ -9,8 +9,8 @@ import { HandleServerError } from '#shared/helpers/HandleServerError'
 
 
 type CheckType = {
-  ok: boolean,
-  found?: boolean,
+  ok: boolean
+  found?: boolean
 }
 
 const checkExistence = async (_id: ObjectId): Promise<CheckType> => {

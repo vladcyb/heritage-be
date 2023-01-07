@@ -42,6 +42,14 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/member-delimiter-style': [
+      'error', {
+        'multiline': {
+          'delimiter': 'none',
+        },
+      },
+    ],
+    '@typescript-eslint/indent': ['error', 2],
     'comma-dangle': ['error', 'always-multiline'],
     'sort-imports': [
       'error',
