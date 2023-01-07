@@ -3,7 +3,7 @@ import { model, Schema } from 'mongoose'
 import { SexEnum } from '#enums/SexEnum'
 
 
-export const personSchema = new Schema({
+const personSchema = new Schema({
   surname: String,
   name: String,
   patronymic: String,

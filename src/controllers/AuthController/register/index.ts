@@ -1,12 +1,12 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 
-import { User, UserModel } from '#models'
+import { IUserModel, User } from '#models'
 import { errorResponse, resultResponse } from '#shared/responses'
 import { authConstants } from '#controllers/AuthController/authConstants'
 import { HandleServerError } from '#shared/helpers/HandleServerError'
 
-export const register = async (req: Request<any, any, UserModel>, res: Response) => {
+export const register = async (req: Request<any, any, IUserModel>, res: Response) => {
   try {
     const { login, password } = req.body
     const user = await User.findOne({ login })
