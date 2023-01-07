@@ -1,3 +1,3 @@
-export { PersonModel } from './PersonModel'
-export { UserModel } from './UserModel'
+export { IPersonModel } from './IPersonModel'
+export { IUserModel } from './IUserModel'
 export { Person, User } from './mongo'

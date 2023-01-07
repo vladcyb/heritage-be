@@ -2,15 +2,15 @@ import { ObjectId } from 'mongodb'
 import { Request, Response } from 'express'
 import { matchedData } from 'express-validator'
 
-import { Person, PersonModel } from '#models'
+import { IPersonModel, Person } from '#models'
 import { errorResponse, resultResponse } from '#shared/responses'
 import { SOMETHING_WENT_WRONG_ERROR } from '#shared/constants/errors/messages'
 import { HandleServerError } from '#shared/helpers/HandleServerError'
 
 
 type CheckType = {
-  ok: boolean,
-  found?: boolean,
+  ok: boolean
+  found?: boolean
 }
 
 const checkExistence = async (_id: ObjectId): Promise<CheckType> => {
@@ -34,7 +34,7 @@ const checkExistence = async (_id: ObjectId): Promise<CheckType> => {
 }
 
 
-export const createPerson = async (req: Request<any, any, PersonModel>, res: Response) => {
+export const createPerson = async (req: Request<any, any, IPersonModel>, res: Response) => {
   try {
     const data = matchedData(req, {
       locations: ['body'],
