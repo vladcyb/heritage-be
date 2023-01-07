@@ -64,6 +64,7 @@ module.exports = {
       },
     ],
     'import/no-unresolved': 'error',
+    'unused-imports/no-unused-imports': 'error',
   },
   'settings': {
     'import/parsers': {
